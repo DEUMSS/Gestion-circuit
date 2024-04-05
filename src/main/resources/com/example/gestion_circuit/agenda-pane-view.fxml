@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="708.0" prefWidth="903.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AgendaController">
+   <children>
+      <Label layoutX="333.0" layoutY="14.0" text="Gestion des réservations">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <TableView fx:id="TAB_Voiture" layoutX="38.0" layoutY="81.0" prefHeight="200.0" prefWidth="398.0">
+        <columns>
+            <TableColumn prefWidth="75.0" text="id_voiture" visible="false" />
+          <TableColumn prefWidth="146.39995956420898" text="Modèle" />
+          <TableColumn prefWidth="251.2000030517578" text="Déscription" />
+            <TableColumn prefWidth="75.0" text="VO_isDisponible" visible="false" />
+        </columns>
+      </TableView>
+      <TableView fx:id="TAB_Circuit" layoutX="466.0" layoutY="81.0" prefHeight="200.0" prefWidth="398.0">
+         <columns>
+            <TableColumn prefWidth="75.0" text="id_Circuit" visible="false" />
+            <TableColumn prefWidth="280.800048828125" text="Description" />
+            <TableColumn prefWidth="75.0" text="CI_isDisponible" visible="false" />
+            <TableColumn prefWidth="117.5999755859375" text="nbVoitureMax" />
+         </columns>
+      </TableView>
+      <Label layoutX="232.0" layoutY="54.0" text="Sélectionner une voiture et un circuit puis saisir une date pour voir les disponibilités" />
+      <DatePicker fx:id="DATE_Reserv" layoutX="365.0" layoutY="297.0" />
+      <Button fx:id="BTN_Afficher" layoutX="424.0" layoutY="332.0" mnemonicParsing="false" onAction="#onClickAfficher" text="Afficher" />
+      <Label fx:id="TXT_infoConduc" layoutX="385.0" layoutY="372.0" text="Informations conducteur" visible="false" />
+      <TextField fx:id="SAI_Nom" layoutX="116.0" layoutY="434.0" visible="false" />
+      <Label fx:id="TXT_Nom" layoutX="76.0" layoutY="438.0" text="Nom :" visible="false" />
+      <Label fx:id="TXT_Prenom" layoutX="306.0" layoutY="438.0" text="Prénom :" visible="false" />
+      <TextField fx:id="SAI_Prenom" layoutX="359.0" layoutY="434.0" visible="false" />
+      <Label fx:id="TXT_Naissance" layoutX="532.0" layoutY="438.0" text="Date de naissance :" visible="false" />
+      <DatePicker fx:id="DATE_Naissance" layoutX="642.0" layoutY="434.0" visible="false" />
+      <Label fx:id="TXT_erreurInfo" alignment="CENTER" contentDisplay="CENTER" layoutX="89.0" layoutY="395.0" prefHeight="26.0" prefWidth="723.0" textAlignment="CENTER" visible="false">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
+      <TextField fx:id="SAI_Tel" layoutX="238.0" layoutY="469.0" prefHeight="26.0" prefWidth="162.0" visible="false" />
+      <Label fx:id="TXT_Tel" layoutX="107.0" layoutY="473.0" text="Numéro de téléphone :" visible="false" />
+      <TextField fx:id="SAI_Permis" layoutX="625.0" layoutY="469.0" prefHeight="26.0" prefWidth="162.0" visible="false" />
+      <Label fx:id="TXT_Permis" layoutX="446.0" layoutY="473.0" text="Numéro de permis de conduire :" visible="false" />
+      <TableView fx:id="TAB_Creneau" layoutX="397.0" layoutY="531.0" prefHeight="130.0" prefWidth="110.0" visible="false">
+         <columns>
+            <TableColumn fx:id="CR_idCol" prefWidth="75.0" text="cr_id" visible="false" />
+            <TableColumn fx:id="CR_creneauCol" prefWidth="93.60003662109375" text="Créneaux" />
+         </columns>
+      </TableView>
+      <Label fx:id="TXT_crDispo" layoutX="358.0" layoutY="513.0" text="Créneaux disponibles à cette date :" visible="false" />
+      <Button fx:id="BTN_Valider" layoutX="424.0" layoutY="668.0" mnemonicParsing="false" onAction="#onClickValider" text="Valider" visible="false">
+         <opaqueInsets>
+            <Insets top="-4.0" />
+         </opaqueInsets></Button>
+   </children>
+</AnchorPane>

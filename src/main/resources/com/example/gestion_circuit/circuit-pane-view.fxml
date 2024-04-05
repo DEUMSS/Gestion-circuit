@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="630.0" prefWidth="851.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.CircuitController">
+   <children>
+      <Label layoutX="356.0" layoutY="18.0" text="Gestion circuit">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Button fx:id="BTN_Rafraichir" layoutX="778.0" layoutY="40.0" mnemonicParsing="false" text="Rafraichir">
+         <font>
+            <Font size="9.0" />
+         </font>
+      </Button>
+      <TableView fx:id="TAB_Circuit" layoutX="23.0" layoutY="65.0" prefHeight="278.0" prefWidth="806.0">
+        <columns>
+            <TableColumn prefWidth="75.0" text="id" visible="false" />
+          <TableColumn prefWidth="536.7999629974365" text="Description" />
+          <TableColumn minWidth="0.0" prefWidth="115.20001220703125" text="Disponibilité" />
+            <TableColumn prefWidth="149.60009765625" text="Nombre de voiture max." />
+        </columns>
+      </TableView>
+      <Label layoutX="276.0" layoutY="358.0" text="Ajout et modification de circuit">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Label fx:id="TXT_ErreurInfo" alignment="CENTER" contentDisplay="CENTER" layoutX="56.0" layoutY="402.0" prefHeight="32.0" prefWidth="710.0" textAlignment="CENTER" visible="false" />
+      <Label layoutX="23.0" layoutY="444.0" text="Id">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="23.0" layoutY="552.0" text="Description">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="23.0" layoutY="516.0" text="Disponibilité">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="23.0" layoutY="480.0" text="Nombre de voiture max.">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="SAI_Id" editable="false" layoutX="235.0" layoutY="444.0" prefHeight="26.0" prefWidth="90.0" />
+      <TextField fx:id="SAI_Description" layoutX="235.0" layoutY="552.0" prefHeight="26.0" prefWidth="534.0" />
+      <TextField fx:id="SAI_nbVoiture" layoutX="235.0" layoutY="480.0" prefHeight="26.0" prefWidth="90.0" />
+      <CheckBox fx:id="INT_Dispo" layoutX="235.0" layoutY="517.0" mnemonicParsing="false" text="Dsiponible">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </CheckBox>
+      <Button fx:id="BTN_Add" layoutX="785.0" layoutY="591.0" mnemonicParsing="false" onAction="#onClickAddCI" text="Ajouter" />
+      <Button fx:id="BTN_Save" disable="true" layoutX="610.0" layoutY="591.0" mnemonicParsing="false" onAction="#onClickEnregistrer" text="Enregistrer les modifications" />
+      <Button fx:id="BTN_Supp" disable="true" layoutX="480.0" layoutY="591.0" mnemonicParsing="false" onAction="#onClickSupprimer" text="Supprimer le circuit" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,127 @@
+--
+-- Structure de la table `ci_circuit`
+--
+
+DROP TABLE IF EXISTS `ci_circuit`;
+CREATE TABLE IF NOT EXISTS `ci_circuit` (
+  `CI_id` int(11) NOT NULL AUTO_INCREMENT,
+  `CI_description` text NOT NULL,
+  `CI_disponible` tinyint(1) NOT NULL,
+  `CI_nbVoituresMax` int(11) NOT NULL,
+  PRIMARY KEY (`CI_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `ci_circuit`
+--
+
+INSERT INTO `ci_circuit` (`CI_id`, `CI_description`, `CI_disponible`, `CI_nbVoituresMax`) VALUES
+(1, 'Circuit le mans, circuit mythique de france avec 31 virages pour 13,6 Km', 1, 20);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `co_conducteur`
+--
+
+DROP TABLE IF EXISTS `co_conducteur`;
+CREATE TABLE IF NOT EXISTS `co_conducteur` (
+  `CO_id` int(11) NOT NULL AUTO_INCREMENT,
+  `CO_nom` varchar(255) NOT NULL,
+  `CO_prenom` varchar(255) NOT NULL,
+  `CO_dateNaissance` date NOT NULL,
+  `CO_numeroTel` int(11) NOT NULL,
+  `co_permis` bigint(255) NOT NULL,
+  PRIMARY KEY (`CO_id`),
+  UNIQUE KEY `CO_numeroTel` (`CO_numeroTel`),
+  UNIQUE KEY `co_permis` (`co_permis`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `co_conducteur`
+--
+
+INSERT INTO `co_conducteur` (`CO_id`, `CO_nom`, `CO_prenom`, `CO_dateNaissance`, `CO_numeroTel`, `co_permis`) VALUES
+(1, 'Pizarro', 'Damien', '2002-01-24', 664849839, 123456789012);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `cr_creneau`
+--
+
+DROP TABLE IF EXISTS `cr_creneau`;
+CREATE TABLE IF NOT EXISTS `cr_creneau` (
+  `cr_id` int(11) NOT NULL AUTO_INCREMENT,
+  `cr_creneau` varchar(55) NOT NULL,
+  PRIMARY KEY (`cr_id`),
+  UNIQUE KEY `cr_creneau` (`cr_creneau`)
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `cr_creneau`
+--
+
+INSERT INTO `cr_creneau` (`cr_id`, `cr_creneau`) VALUES
+(1, '8h-9h'),
+(2, '9h-10h'),
+(3, '10h-11h'),
+(4, '11h-12h'),
+(5, '13h-14h'),
+(6, '14h-15h'),
+(7, '15h-16h'),
+(8, '16h-17h');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `re_reservation`
+--
+
+DROP TABLE IF EXISTS `re_reservation`;
+CREATE TABLE IF NOT EXISTS `re_reservation` (
+  `RE_id` int(11) NOT NULL AUTO_INCREMENT,
+  `RE_idVoiture` int(11) NOT NULL,
+  `RE_idCircuit` int(11) NOT NULL,
+  `RE_idConducteur` int(11) NOT NULL,
+  `RE_idCreneau` int(11) NOT NULL,
+  `RE_date` date NOT NULL,
+  PRIMARY KEY (`RE_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `re_reservation`
+--
+
+INSERT INTO `re_reservation` (`RE_id`, `RE_idVoiture`, `RE_idCircuit`, `RE_idConducteur`, `RE_idCreneau`, `RE_date`) VALUES
+(1, 8, 1, 1, 2, '2024-03-22');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `vo_voiture`
+--
+
+DROP TABLE IF EXISTS `vo_voiture`;
+CREATE TABLE IF NOT EXISTS `vo_voiture` (
+  `VO_id` int(11) NOT NULL AUTO_INCREMENT,
+  `VO_modele` varchar(255) NOT NULL,
+  `VO_description` text NOT NULL,
+  `VO_disponible` tinyint(1) NOT NULL,
+  PRIMARY KEY (`VO_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `vo_voiture`
+--
+
+INSERT INTO `vo_voiture` (`VO_id`, `VO_modele`, `VO_description`, `VO_disponible`) VALUES
+(5, 'Bugatti Chiron super sport 300+', 'W16 quadruple turbo, 4 roues motrices, hypercar ', 1),
+(7, 'Mazda RX-7 ', 'Rotor bi-turbo, prpulsion, drifteuse', 1),
+(8, 'Nissan skyline R34 GT-R', '6 cylindres en ligne, 4 roues motrices, voiture de circuit', 1),
+(11, 'test', 'test test test', 1);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

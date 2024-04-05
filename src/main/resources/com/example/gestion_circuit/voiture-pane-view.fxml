@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="573.0" prefWidth="805.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.VoitureController">
+    <children>
+        <TableView fx:id="TAB_Voitures" layoutX="70.0" layoutY="57.0" prefHeight="230.0" prefWidth="697.0">
+            <columns>
+                <TableColumn prefWidth="75.0" text="id" visible="false" />
+                <TableColumn prefWidth="228.800048828125" text="Modèle" />
+                <TableColumn prefWidth="315.199951171875" text="Description" />
+                <TableColumn prefWidth="152.79998779296875" text="Disponibilité" />
+            </columns>
+        </TableView>
+        <Label layoutX="345.0" layoutY="18.0" text="Gestion voiture">
+            <font>
+                <Font size="22.0" />
+            </font>
+        </Label>
+        <Label layoutX="264.0" layoutY="306.0" text="Ajout et modification de voiture">
+            <font>
+                <Font size="22.0" />
+            </font>
+        </Label>
+        <Label layoutX="14.0" layoutY="443.0" prefHeight="27.0" prefWidth="61.0" text="Modèle">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="14.0" layoutY="483.0" text="Déscription">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="14.0" layoutY="524.0" text="Disponibilité">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <TextField fx:id="SAI_Modele" layoutX="171.0" layoutY="443.0" prefHeight="26.0" prefWidth="574.0" />
+        <TextField fx:id="SAI_Description" layoutX="171.0" layoutY="483.0" prefHeight="26.0" prefWidth="574.0" />
+        <CheckBox fx:id="INT_Disponible" layoutX="171.0" layoutY="525.0" mnemonicParsing="false" text="Disponible" />
+        <Button layoutX="690.0" layoutY="522.0" mnemonicParsing="false" onAction="#onClickAddVo" text="Ajouter" />
+        <Label fx:id="TXT_ErreurInfo" alignment="CENTER" contentDisplay="CENTER" disable="true" layoutX="96.0" layoutY="348.0" prefHeight="32.0" prefWidth="646.0" textAlignment="CENTER">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Label>
+        <Button layoutX="696.0" layoutY="26.0" mnemonicParsing="false" onAction="#listAllVoiture" text="Rafraichir">
+            <font>
+                <Font size="9.0" />
+            </font>
+        </Button>
+      <Button fx:id="BTN_SaveModif" disable="true" layoutX="515.0" layoutY="522.0" mnemonicParsing="false" onAction="#onClickEnregistrer" text="Enregistrer les modifications" />
+      <Button fx:id="BTN_Supp" disable="true" layoutX="381.0" layoutY="522.0" mnemonicParsing="false" onAction="#onClickSupprimer" text="Supprimer la voiture" />
+      <Label layoutX="15.0" layoutY="401.0" prefHeight="27.0" prefWidth="22.0" text="Id">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="SAI_Id" editable="false" layoutX="172.0" layoutY="401.0" prefHeight="26.0" prefWidth="55.0" />
+    </children>
+</AnchorPane>

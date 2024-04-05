@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="584.0" prefWidth="880.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+  <tabs>
+    <Tab text="Agenda">
+      <fx:include source="agenda-pane-view.fxml"/>
+    </Tab>
+    <Tab text="Gestion Voiture">
+      <fx:include source="voiture-pane-view.fxml" />
+    </Tab>
+      <Tab text="Gestion circuit">
+        <fx:include source="circuit-pane-view.fxml"/>
+      </Tab>
+  </tabs>
+</TabPane>
